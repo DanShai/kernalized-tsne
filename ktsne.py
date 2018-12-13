@@ -17,7 +17,6 @@ class Ktsne:
         self.f_opts = f_opts
         self._momentum = .4
         self.X = X.copy()
-        self.Y = None
         self.P = None
         self.Q = None
         self._iter = 0
