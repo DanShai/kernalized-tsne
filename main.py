@@ -11,8 +11,8 @@ X = iris.data
 y = iris.target
 scaler = MinMaxScaler(feature_range=(0, 1))
 
-f_opts = {'p_degree': 2.0, 'p_dims': 3, 'eta': 10.0,
-          'perplexity': 30.0, 'n_dims': 2, 'ker': 'poly', 'gamma': 1.0}
+f_opts = {'p_degree': 2.0, 'p_dims': 3, 'eta': 25.0,
+          'perplexity': 30.0, 'n_dims': 2, 'ker': 'anova', 'gamma': 1.0}
 k_tsne = Ktsne(X, f_opts=f_opts)
 
 kernel = f_opts["ker"]

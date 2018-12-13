@@ -21,7 +21,10 @@ class Ktsne:
         self.Q = None
         self._iter = 0
         (n, d) = self.X.shape
-        self.Y = np.random.randn(n, self._dim)
+        y_sz = (n, self._dim)
+        mw, Mw = (-np.sqrt(6. / sum(y_sz)), np.sqrt(6. / sum(y_sz)))
+        # self.Y = np.random.uniform(mw, Mw, y_sz)
+        self.Y = np.random.randn(n, self._dim)*Mw
         self.dY = None  # np.zeros((n, self._dim))
         self.Y_t = np.array(
             [np.zeros_like(self.Y), np.zeros_like(self.Y)])

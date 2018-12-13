@@ -27,7 +27,7 @@ class Kernels:
         elif ker == "rbf":
             X = self.rbf(XX, gamma=gamma,  n_components=p_comp).real
         elif ker == "cosine":
-            X = self.cosin(XX, n_components=p_comp).real
+            X = self.cosine(XX, n_components=p_comp).real
         elif ker == "iquad":
             X = self.iquad(XX, gamma=gamma, degree=p_degree,
                            n_components=p_comp).real
