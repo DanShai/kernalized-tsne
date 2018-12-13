@@ -12,7 +12,7 @@ Apart from pca, available kernels are:
 - cosine
 - anova
 
-you can add new/own kernel and test it make sure to tune the parameters in f_opts to get better results!
+you can add new/own kernel and test it, make sure to tune the parameters in f_opts to get better results!
 License : MIT and you are free to do what ever you want with it !
 
 ![Screenshot](/ktsne.png)
