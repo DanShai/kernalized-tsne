@@ -129,9 +129,9 @@ class Kernels:
         K = np.ones((X.shape[0], X.shape[0]))
         gamma = min(.1, gamma)
         for d in range(X.shape[1]):
-            column_1 = X[:, d].reshape(-1, 1)
+            X_1 = X[:, d].reshape(-1, 1)
             K *= (1-gamma ** 2) / \
-                (2*(1 - 2*gamma * np.cos(column_1 - column_1.T)) + gamma**2)
+                (2*(1 - 2*gamma * np.cos(X_1 - X_1.T)) + gamma**2)
 
         K = self.centerK(K)
         return self.eignes(K, n_components=n_components)
