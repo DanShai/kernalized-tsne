@@ -5,15 +5,26 @@ from ktsne import Ktsne
 from sklearn import datasets
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
+from sklearn.utils import shuffle
 
-iris = datasets.load_iris()
 
-X = iris.data
-y = iris.target
+# iris = datasets.load_iris()
+# X = iris.data
+# y = iris.target
+
+digits = datasets.load_digits()
+X = digits.data
+y = digits.target
+
+
+X, y = shuffle(X, y)
+X = X[:500]
+y = y[:500]
+
 scaler = MinMaxScaler(feature_range=(-1, 1))
 
-f_opts = {'p_degree': 2.0, 'p_dims': 3, 'eta': 25.0,
-          'perplexity': 30.0, 'n_dims': 2, 'ker': 'pca', 'gamma': 1.0}
+f_opts = {'p_degree': 2.0, 'p_dims': 12, 'eta': 25.0,
+          'perplexity': 50.0, 'n_dims': 2, 'ker': 'pca', 'gamma': 1.0}
 
 kernel = f_opts["ker"]
 

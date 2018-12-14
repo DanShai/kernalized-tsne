@@ -129,16 +129,16 @@ class Ktsne:
         q = self.compute_Q()
         self.gradient(q)
 
-        if self._iter == 50:
+        if self._iter == 100:
             self.P = self.P / 10.
-        if self._iter == 20:
-            self._momentum = .9
+        if self._iter == 25:
+            self._momentum = .8
 
         self.Y = self.Y - self._eta*self.dY
         self.Y = self.Y + self._momentum * \
             np.diff(self.Y_t, axis=0)[0]
-        self.Y_t[0] = self.Y_t[1].copy()
-        self.Y_t[1] = self.Y
+        self.Y_t[1] = self.Y_t[0].copy()
+        self.Y_t[0] = self.Y
 
         C = np.sum(self.P * np.log(self.P / self.Q))
         self._iter += 1

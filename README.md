@@ -17,3 +17,4 @@ you can add new/own kernel and test it, make sure to tune the parameters in f_op
 License : MIT and you are free to do what ever you want with it !
 
 ![Screenshot](/ktsne.png)
+![Screenshot](/ktsne2.png)
