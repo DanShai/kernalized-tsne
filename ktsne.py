@@ -28,6 +28,7 @@ class Ktsne:
         self.dY = None  # np.zeros((n, self._dim))
         self.Y_t = np.array(
             [np.zeros_like(self.Y), np.zeros_like(self.Y)])
+        np.seterr(divide='ignore', invalid='ignore')
 
     def reduce_X(self):
         XX = self.X.copy()
@@ -48,12 +49,13 @@ class Ktsne:
         D = np.sum((X[:, None] - X[None, :])**2, -1)
         return D
 
-    def bin_search(self, d_row, target, tol=1e-3, niter=1000, low=1e-20, up=1e3):
+    def bin_search(self, d_row, target, tol=1e-2, niter=1000, low=1e-10, up=1e3):
 
         for i in xrange(niter):
             estimated = (low + up)/2.
-            p_row = np.exp(- (d_row - np.max(d_row)) / estimated)
-            sumP = np.sum(p_row) + 1e-8
+            # print estimated
+            p_row = np.exp(- (d_row) / estimated)
+            sumP = np.sum(p_row)
             p_row = p_row/sumP
             val = self.entropy(p_row)
             dif = np.abs(val-target)
@@ -63,6 +65,7 @@ class Ktsne:
                 up = estimated
             else:
                 low = estimated
+
         return p_row, estimated
 
     def entropy(self, p_row):
