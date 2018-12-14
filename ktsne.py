@@ -49,7 +49,7 @@ class Ktsne:
         D = np.sum((X[:, None] - X[None, :])**2, -1)
         return D
 
-    def bin_search(self, d_row, target, tol=1e-2, niter=1000, low=1e-10, up=1e3):
+    def bin_search(self, d_row, target, tol=1e-2, niter=1000, low=1e-10, up=1e2):
 
         for i in xrange(niter):
             estimated = (low + up)/2.
