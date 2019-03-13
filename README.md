@@ -6,9 +6,8 @@ A simple alternative implementation of Laurens van der Maaten t-Distributed Stoc
 
 - similarities gaussian conditional probabilities:
 
-```math
-p_{j\vert i}=\frac{\exp(-\| x_i-x_j\|^2/2\sigma^2)}{\sum_{k\neq i}\exp(-\| x_i-x_k\|^2/2\sigma^2)}
-```
+$p_{j\vert i}=\frac{\exp(-\| x_i-x_j\|^2/2\sigma^2)}{\sum_{k\neq i}\exp(-\| x_i-x_k\|^2/2\sigma^2)}
+$
 
 - output similarities t-distribution conditional probabilities:
 
