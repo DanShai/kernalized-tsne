@@ -2,7 +2,7 @@
 
 A simple alternative implementation of Laurens van der Maaten t-Distributed Stochastic Neighbor Embedding (t-SNE) , with use of kernals.
 
-#equations
+# equations
 
 ![Screenshot](/eq.png)
 
