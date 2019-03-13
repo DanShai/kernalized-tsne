@@ -5,15 +5,23 @@ A simple alternative implementation of Laurens van der Maaten t-Distributed Stoc
 # equations
 
 - joint probability pij
+
   ![Screenshot](img/pij.png)
+
 - joint probability qij
+
   ![Screenshot](img/qij.png)
+
 - Cost
+
   ![Screenshot](img/cost.png)
+
 - gradient
+
   ![Screenshot](img/gra.png)
 
 - gradient update
+
   ![Screenshot](img/graupdate.png)
 
 for more information read the PDF file included.
